@@ -5,6 +5,7 @@
 ## 33-3 Library vs Framework
 ## 33-4 Angular vs react vs vue which one to learn
 ## 33-5 Install React and React Component Recap
+> To *Pass* data use _prop_ 
 ## 33-6 Pass data through Props in React
 ## 33-7 How to write and destructure usestate
 ## 33-8 Event handler state update and pass state Recap

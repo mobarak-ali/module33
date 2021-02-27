@@ -6,20 +6,33 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Hero></Hero>
+        <Hero></Hero>
+        <Hero></Hero>
+        <Hero></Hero>
+        <Hero></Hero>
+
       </header>
     </div>
   );
+}
+
+// Hero
+function Hero() {
+  const style = {
+    border: '1px dotted purple',
+    padding: '15px',
+    margin: '10px',
+    background: "purple"
+  }
+
+  return (
+    <div style={style}>
+      <h1>Hello! I'm {}, one of your fevourite Hreos!</h1>
+      <p>I have here for almost {} years.</p>
+    </div>
+
+  )
 }
 
 export default App;
