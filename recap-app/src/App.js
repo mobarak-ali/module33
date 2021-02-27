@@ -1,3 +1,4 @@
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -8,17 +9,29 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <BookCounter></BookCounter>
         <img src={logo} className="App-logo" alt="logo" />
         <Hero name ="Ziaur Rahman"></Hero>
         <Hero name = {heros[1]}></Hero>
         <Hero name = {heros[2]}></Hero>
         <Hero name = {heros[3]}></Hero>
         <Hero name = {heros[4]}></Hero>
-
-
       </header>
     </div>
   );
+}
+
+// BookCounter
+function BookCounter(){
+    const result = useState(0);
+    console.log(result);
+    const count = 5;
+     return (
+        <div>
+          <button>Add Books</button>
+          <h4>Number of Books: {count}</h4>
+        </div>
+      )
 }
 
 // Hero
@@ -32,7 +45,7 @@ function Hero(prop) {
 
   return (
     <div style={style}>
-      <h1>Hello! I'm Sector Commander {prop.name}!</h1>
+      <h3>Hello! I'm Sector Commander {prop.name}!</h3>
       <p>I was in charge of Sector {} during our independant war.</p>
     </div>
 
