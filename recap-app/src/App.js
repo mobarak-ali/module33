@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
 
 function App() {
 
@@ -16,22 +16,28 @@ function App() {
         <Hero name = {heros[2]}></Hero>
         <Hero name = {heros[3]}></Hero>
         <Hero name = {heros[4]}></Hero>
+
       </header>
     </div>
   );
 }
-
 // BookCounter
 function BookCounter(){
-    const result = useState(0);
-    console.log(result);
-    const count = 5;
-     return (
-        <div>
-          <button>Add Books</button>
-          <h4>Number of Books: {count}</h4>
-        </div>
-      )
+  const [count, setCount] = useState(0)
+  return (
+    <div>
+      <button onClick={() => setCount(count+ 1)} >Add Books</button>
+      <button onClick={() => (count >=1) ? setCount(count - 1): setCount(0)} >Remove Books</button>
+      <h4>Number of Books: {count}</h4>
+      <BookBought books = {count}></BookBought>
+    </div>
+  )
+}
+
+function BookBought(prop){
+  return (
+    <h2>Books I have Read {prop.count}</h2>
+  ) 
 }
 
 // Hero
