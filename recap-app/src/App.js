@@ -23,20 +23,22 @@ function App() {
 }
 // BookCounter
 function BookCounter(){
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+
   return (
     <div>
       <button onClick={() => setCount(count+ 1)} >Add Books</button>
       <button onClick={() => (count >=1) ? setCount(count - 1): setCount(0)} >Remove Books</button>
       <h4>Number of Books: {count}</h4>
       <BookBought books = {count}></BookBought>
+      <BookBought books = {count + 3}></BookBought>
     </div>
   )
 }
 
 function BookBought(prop){
   return (
-    <h2>Books I have Read {prop.count}</h2>
+    <h2>So far I have Read {prop.books} Book(s)</h2>
   ) 
 }
 
@@ -52,7 +54,7 @@ function Hero(prop) {
   return (
     <div style={style}>
       <h3>Hello! I'm Sector Commander {prop.name}!</h3>
-      <p>I was in charge of Sector {} during our independant war.</p>
+      <p>I was in charge of Sector {} during our independent war.</p>
     </div>
 
   )
