@@ -4,18 +4,17 @@ import React, { useState } from 'react';
 
 function App() {
 
-  const heros = ['Ziaur Rahman', "Major Jalil", 'Ataul Goni Usmani', "Rafiqul Islam"]
+  const heros = [{name: 'Ziaur Rahman', age:45}, {name:"Major Jalil", age:50}, {name:"Ataul Goni Usmani", age:65}, {name:"Rafiqul Islam", age:68}]
 
   return (
     <div className="App">
       <header className="App-header">
-        <BookCounter></BookCounter>
         <img src={logo} className="App-logo" alt="logo" />
-        <Hero name ="Ziaur Rahman"></Hero>
-        <Hero name = {heros[1]}></Hero>
-        <Hero name = {heros[2]}></Hero>
-        <Hero name = {heros[3]}></Hero>
-        <Hero name = {heros[4]}></Hero>
+        <BookCounter></BookCounter>
+        {
+          heros.map(hero =>  <Hero name = {hero.name} age = {hero.age}></Hero> )
+         
+        }
 
       </header>
     </div>
@@ -48,13 +47,14 @@ function Hero(prop) {
     border: '1px dotted purple',
     padding: '15px',
     margin: '10px',
-    background: "purple"
+    background: "purple",
+    maxWidth: "300px"
   }
 
   return (
     <div style={style}>
-      <h3>Hello! I'm Sector Commander {prop.name}!</h3>
-      <p>I was in charge of Sector {} during our independent war.</p>
+      <h3><i>{prop.name}</i></h3>
+      <p>Died at the age of {prop.age}</p>
     </div>
 
   )
